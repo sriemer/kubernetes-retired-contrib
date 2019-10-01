@@ -1,4 +1,4 @@
-FROM node:12-buster-slim
+FROM s390x/node:12-buster-slim
 
 COPY server.js /server.js
 

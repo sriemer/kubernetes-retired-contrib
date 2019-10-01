@@ -1,0 +1,14 @@
+FROM s390x/debian:buster
+
+ENV LANG=C.UTF-8
+
+VOLUME ["/root/go/src/k8s.io/contrib/election"]
+
+RUN apt-get update && \
+    apt-get install -y golang make
+
+WORKDIR /root
+
+ENTRYPOINT ["/bin/bash"]
+
+# Build the server binary on the same platform where it should run.
